@@ -1,6 +1,6 @@
 package bot
 
-func AddUser() {
+func AddUser(user User) {
 
 }
 
