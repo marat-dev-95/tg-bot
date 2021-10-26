@@ -9,7 +9,7 @@ import (
 func main() {
 	server := new(server.Server)
 	handler := new(handler.Handler)
-	go server.Run("8080", handler.InitRoutes())
+	go bot.Run()
+	server.Run("8080", handler.InitRoutes())
 
-	bot.Run()
 }
