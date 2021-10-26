@@ -10,6 +10,6 @@ func main() {
 	server := new(server.Server)
 	handler := new(handler.Handler)
 	go bot.Run()
-	server.Run("8080", handler.InitRoutes())
+	server.Run("80", handler.InitRoutes())
 
 }
