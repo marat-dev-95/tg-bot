@@ -55,6 +55,6 @@ func sendLog(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, map[string]interface{}{
-		"message": "success sended",
+		"message": "success",
 	})
 }
