@@ -67,7 +67,8 @@ func Run() {
 			switch update.Message.Command() {
 			case "start":
 				if err != nil {
-					db.NamedExec("INSERT INTO tg_users(FirstName, Tg_id) VALUES(:firstname, :tg_id)", users)
+					_, err = db.NamedExec("INSERT INTO tg_users(FirstName, Tg_id) VALUES(:FirstName, :Tg_id)", users)
+					fmt.Println(err)
 				}
 				msg.Text = "Выполните команду /add_tag #tag чтобы подписаться на тег "
 			case "add_tag":
