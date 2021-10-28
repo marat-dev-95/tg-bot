@@ -10,7 +10,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 
 	api := router.Group("/api")
 	{
-		api.POST("/logs", sendLog)
+		api.GET("/logs", sendLog)
 	}
 
 	return router

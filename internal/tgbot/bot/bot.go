@@ -3,6 +3,7 @@ package bot
 import (
 	"fmt"
 	"log"
+	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"github.com/jmoiron/sqlx"
@@ -21,10 +22,9 @@ type Tag struct {
 	User_id int    `db:"User_id"`
 }
 
-const TOKEN = "2095241662:AAHdJc9IfMBFMi7aS07Ds2XU8L14FFBHWgE"
-
 func Run() {
-	bot, err := tgbotapi.NewBotAPI(TOKEN)
+	token, _ := os.LookupEnv("TOKEN")
+	bot, err := tgbotapi.NewBotAPI(token)
 
 	if err != nil {
 		log.Panic(err)
@@ -49,6 +49,7 @@ func Run() {
 	updates, err := bot.GetUpdatesChan(u)
 
 	for update := range updates {
+
 		if update.Message == nil {
 			continue
 		}
