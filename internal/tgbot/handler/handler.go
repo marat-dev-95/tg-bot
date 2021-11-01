@@ -11,6 +11,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	api := router.Group("/api")
 	{
 		api.GET("/logs", sendLog)
+		api.POST("/logs", sendLogWithFile)
 	}
 
 	return router
